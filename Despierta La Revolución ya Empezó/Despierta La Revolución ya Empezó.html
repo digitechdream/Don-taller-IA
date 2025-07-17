@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Taller IA para Creadores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Energetic & Playful -->
+    <!-- Application Structure Plan: This infographic is a top-to-bottom narrative journey. It starts with a bold hook ("El Despertar"), moves to a visual timeline for the history of AI, then uses interactive cards for core concepts. It presents prompt engineering as a practical skill with copy-paste templates, visualizes the image creation formula, and uses an interactive accordion for the Q&A to keep the layout clean. The flow is designed to build excitement and knowledge sequentially, culminating in a clear call-to-action for the next workshop. -->
+    <!-- Visualization & Content Choices: Data: AI History -> Goal: Change -> Viz: HTML/CSS vertical timeline -> Justification: Clearly shows progression from past to present. | Data: Core Concepts -> Goal: Organize -> Viz: Grid of icon-based cards -> Justification: Breaks down complex ideas into digestible, visually distinct blocks. | Data: Prompt Templates -> Goal: Inform -> Viz: Styled code blocks -> Justification: Easy to read and copy for practical use. | Data: Q&A -> Goal: Organize -> Viz: Accordion -> Justification: Presents a lot of information compactly, letting users explore what interests them. NO SVG/Mermaid used. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #1A1A2E; color: #EAEAEA; }
+        .gradient-text { background: linear-gradient(90deg, #F2994A, #F2C94C); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .card { background-color: #16213E; border: 1px solid #27375E; border-radius: 1rem; transition: all 0.3s ease; }
+        .card:hover { transform: translateY(-5px); border-color: #F2994A; }
+        .section-title { font-weight: 900; color: #FFFFFF; letter-spacing: -0.025em; }
+        .timeline-item { position: relative; padding-left: 3rem; padding-bottom: 2rem; }
+        .timeline-item:not(:last-child)::before { content: ''; position: absolute; left: 1rem; top: 0.5rem; bottom: -0.5rem; width: 2px; background-color: #27375E; }
+        .timeline-dot { position: absolute; left: 0; top: 0.125rem; width: 2.25rem; height: 2.25rem; display: flex; align-items: center; justify-content: center; font-weight: 700; background-color: #F2994A; color: #1A1A2E; border-radius: 9999px; }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-in-out; }
+        .prompt-placeholder {
+            display: flex; align-items: center; justify-content: center;
+            width: 100%; height: 250px;
+            background-color: #0F3460; border: 2px dashed #27375E;
+            border-radius: 1rem; color: #EAEAEA; text-align: center; padding: 1rem;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Section 1: Hero -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center p-6 bg-cover bg-center" style="background-image: linear-gradient(rgba(26, 26, 46, 0.8), rgba(26, 26, 46, 1));">
+        <h1 class="text-5xl md:text-8xl font-black uppercase">Despierta</h1>
+        <h2 class="text-3xl md:text-5xl font-bold gradient-text mt-2">La Revolución ya Empezó</h2>
+        <p class="max-w-3xl mx-auto mt-6 text-lg text-gray-300">Estás a punto de descubrir la herramienta creativa más potente de la historia. No como una amenaza, sino como tu próximo copiloto.</p>
+        <div class="mt-12">
+            <div class="prompt-placeholder">
+                <p class="text-sm">
+                    <img src="images/human-brain.webp" alt="Un cerebro humano formado por circuitos de luz brillantes que conectan con herramientas creativas." class="w-full h-auto max-w-lg mx-auto rounded-lg shadow-xl">
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: History Timeline -->
+    <section class="py-20 px-6">
+        <div class="container mx-auto max-w-5xl">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-4xl md:text-5xl">Un Viaje Inesperado</h2>
+                <p class="mt-4 text-lg max-w-2xl mx-auto text-gray-300">Para entender el futuro, debemos mirar al pasado. La IA de hoy nació de lugares que nunca hubieras imaginado.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot">📜</div>
+                        <h3 class="text-2xl font-bold mb-2">Alan Turing y Enigma</h3>
+                        <p class="text-gray-400">En la SGM, la lógica de Turing para descifrar códigos sentó las bases conceptuales de la computación y la IA. Era la idea sin la potencia.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot">❄️</div>
+                        <h3 class="text-2xl font-bold mb-2">El "Invierno" de la IA</h3>
+                        <p class="text-gray-400">Durante décadas, las ideas existían, pero la falta de poder computacional (hardware) frenó casi todo el progreso práctico.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot">🎮</div>
+                        <h3 class="text-2xl font-bold mb-2">¡El Héroe Inesperado: los Videojuegos!</h3>
+                        <p class="text-gray-400">La demanda de gráficos realistas impulsó la creación de GPUs (Tarjetas Gráficas) con miles de núcleos para procesamiento en paralelo. Esta fue la "gasolina" que la IA necesitaba.</p>
+                    </div>
+                </div>
+                <div class="prompt-placeholder">
+                    <p class="text-sm">
+                        <img src="images/enigma-vintage.webp" alt="Comparativa entre una máquina Enigma antigua y una tarjeta gráfica moderna." class="w-full h-auto rounded-lg shadow-xl">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Core Concepts -->
+    <section class="py-20 px-6 bg-[#16213E]">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-4xl md:text-5xl">El Idioma de la IA</h2>
+                <p class="mt-4 text-lg max-w-2xl mx-auto text-gray-300">Domina estos 4 conceptos y tendrás la clave para comunicarte eficazmente con cualquier IA.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="card p-6 text-center">
+                    <div class="text-5xl mb-4">📚</div>
+                    <h3 class="text-xl font-bold">LLMs</h3>
+                    <p class="text-gray-400 mt-2">Imagina un bibliotecario que se ha leído TODO internet. No "piensa", pero es un genio prediciendo la siguiente palabra más probable.</p>
+                </div>
+                <div class="card p-6 text-center">
+                    <div class="text-5xl mb-4">🧱</div>
+                    <h3 class="text-xl font-bold">Tokens</h3>
+                    <p class="text-gray-400 mt-2">Son las piezas de LEGO del lenguaje. La IA no lee palabras, lee tokens. Todo tiene un coste en tokens.</p>
+                </div>
+                <div class="card p-6 text-center">
+                    <div class="text-5xl mb-4">📏</div>
+                    <h3 class="text-xl font-bold">Ventana de Contexto</h3>
+                    <p class="text-gray-400 mt-2">La memoria a corto plazo de la IA. Si la conversación es muy larga, "olvida" el principio para hacer espacio a lo nuevo.</p>
+                </div>
+                <div class="card p-6 text-center">
+                    <div class="text-5xl mb-4">🎭</div>
+                    <h3 class="text-xl font-bold">Sesgos</h3>
+                    <p class="text-gray-400 mt-2">La IA aprende de nosotros, con lo bueno y lo malo. Nuestro trabajo como creadores es ser el filtro ético y corregir sus prejuicios.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Prompting Technique -->
+    <section class="py-20 px-6">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="section-title text-4xl md:text-5xl">El Arte de Preguntar</h2>
+            <p class="mt-4 text-lg max-w-2xl mx-auto text-gray-300">¿No sabes qué pedir? Aquí tienes un superpoder: haz que la IA te entreviste a ti. Cambia las reglas del juego.</p>
+            <div class="card p-6 mt-12 text-left">
+                <h3 class="text-2xl font-bold text-center mb-4 gradient-text">Prompt: El Entrevistador Experto</h3>
+                <pre class="bg-[#0F3460] p-4 rounded-lg text-white whitespace-pre-wrap"><code>Actúa como un [Rol del Experto].
+Quiero lograr [Mi Objetivo], pero no estoy seguro de qué información necesitas.
+Por favor, hazme todas las preguntas que necesites, una por una, para poder darte el contexto perfecto y que puedas crear el mejor [Resultado deseado] posible.</code></pre>
+            </div>
+            <div class="mt-12 prompt-placeholder">
+                <p class="text-sm">
+                    <img src="images/luminous-robot.webp" alt="Un robot asistente luminoso conversando con una persona." class="w-full h-auto max-w-md mx-auto rounded-lg shadow-2xl">
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Image Generation -->
+    <section class="py-20 px-6 bg-[#16213E]">
+        <div class="container mx-auto text-center">
+            <h2 class="section-title text-4xl md:text-5xl">¡Manos a la Obra!</h2>
+            <p class="mt-4 text-lg max-w-2xl mx-auto text-gray-300">Crear imágenes es como tener un director de arte en tu bolsillo. La fórmula mágica es simple.</p>
+            <div class="mt-12 flex flex-wrap justify-center items-center gap-4 text-2xl font-black">
+                <div class="card p-6">SUJETO</div>
+                <div class="text-orange-400">+</div>
+                <div class="card p-6">ACCIÓN</div>
+                <div class="text-orange-400">+</div>
+                <div class="card p-6">ENTORNO</div>
+                <div class="text-orange-400">+</div>
+                <div class="card p-6 gradient-text">ESTILO</div>
+            </div>
+            <p class="mt-6 text-gray-300">El **Estilo** es tu ingrediente secreto. Cambia "fotorrealista" por "acuarela" o "cyberpunk" y transforma la misma idea en algo completamente nuevo.</p>
+        </div>
+    </section>
+
+    <!-- Section 6: Copyright -->
+    <section class="py-20 px-6">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="section-title text-4xl md:text-5xl">La Pregunta del Millón</h2>
+            <p class="mt-4 text-lg max-w-2xl mx-auto text-gray-300">¿Puedo usar lo que creo? La respuesta corta es "depende". Aprende a verificarlo en 5 minutos.</p>
+            <div class="grid md:grid-cols-2 gap-8 mt-12 text-left">
+                <div class="card p-6">
+                    <h3 class="text-2xl font-bold mb-2">Para IAs con Chat</h3>
+                    <p class="text-gray-400 mb-4">(ChatGPT, Copilot)</p>
+                    <p class="mb-2">¡Pregúntale directamente!</p>
+                    <pre class="bg-[#0F3460] p-4 rounded-lg text-white text-sm whitespace-pre-wrap"><code>Según tus términos de servicio actuales, ¿puedo usar el contenido que genero contigo para fines comerciales?</code></pre>
+                </div>
+                <div class="card p-6">
+                    <h3 class="text-2xl font-bold mb-2">Para IAs sin Chat</h3>
+                    <p class="text-gray-400 mb-4">(Midjourney, etc.)</p>
+                    <p class="mb-2">Conviértete en detective. Busca en Google:</p>
+                    <pre class="bg-[#0F3460] p-4 rounded-lg text-white text-sm whitespace-pre-wrap"><code>[Nombre de la Herramienta] terms of service commercial use</code></pre>
+                </div>
+            </div>
+             <div class="mt-12 prompt-placeholder">
+                <p class="text-sm">
+                    <img src="images/judges-gavel.webp" alt="Un mazo de juez brillante sobre un libro de términos de servicio." class="w-full h-auto max-w-md mx-auto rounded-lg shadow-2xl">
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Q&A -->
+    <section class="py-20 px-6 bg-[#16213E]">
+        <div class="container mx-auto max-w-3xl">
+            <div class="text-center mb-12">
+                <h2 class="section-title text-4xl md:text-5xl">Preguntas Frecuentes</h2>
+            </div>
+            <div id="accordion-container" class="space-y-4">
+                <!-- Q1 -->
+                <div class="card">
+                    <button class="accordion-header w-full text-left p-6 flex justify-between items-center">
+                        <span class="font-bold text-lg">¿La IA me va a quitar el trabajo?</span>
+                        <span class="accordion-icon text-2xl text-orange-400 transform transition-transform duration-300">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="px-6 pb-6 text-gray-300">No. Pero alguien que usa la IA sí podría hacerlo. La IA no es tu reemplazo, es tu copiloto. El que aprende a volar con este copiloto llegará mucho más lejos y más rápido.</p>
+                    </div>
+                </div>
+                <!-- Q2 -->
+                <div class="card">
+                    <button class="accordion-header w-full text-left p-6 flex justify-between items-center">
+                        <span class="font-bold text-lg">¿Usar IA es hacer trampa o plagio?</span>
+                        <span class="accordion-icon text-2xl text-orange-400 transform transition-transform duration-300">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="px-6 pb-6 text-gray-300">¿Usar una calculadora es trampa? Es usar una herramienta. El plagio es copiar a otro humano. La IA genera algo nuevo. Tu labor es inyectarle tu voz, tu experiencia y tu ética.</p>
+                    </div>
+                </div>
+                <!-- Q3 -->
+                <div class="card">
+                    <button class="accordion-header w-full text-left p-6 flex justify-between items-center">
+                        <span class="font-bold text-lg">¿Todo esto es muy caro?</span>
+                        <span class="accordion-icon text-2xl text-orange-400 transform transition-transform duration-300">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="px-6 pb-6 text-gray-300">¡Para nada! Todo lo que hemos visto hoy se puede hacer con herramientas gratuitas o con planes gratuitos muy generosos. La barrera no es económica, es de conocimiento.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 8: Call to Action -->
+    <section class="py-20 px-6 text-center">
+        <h2 class="section-title text-4xl md:text-5xl">El Próximo Nivel te Espera</h2>
+        <p class="max-w-3xl mx-auto mt-6 text-lg text-gray-300">Hoy abrimos la puerta. Pero imagina crear videos, clonar tu voz y automatizar flujos de trabajo completos. Ese es el futuro, y está a tu alcance.</p>
+        <div class="mt-8">
+            <a href="#" class="inline-block bg-gradient-to-r from-orange-400 to-yellow-400 text-black font-bold py-4 px-10 rounded-full text-lg transform hover:scale-105 transition-transform duration-300">
+                ¡Quiero Saber Más del Taller Avanzado!
+            </a>
+        </div>
+        <p class="mt-6 text-gray-500">A partir de hoy, ya no eres un espectador. Eres un arquitecto de esta nueva era.</p>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const accordionContainer = document.getElementById('accordion-container');
+            if(accordionContainer){
+                accordionContainer.addEventListener('click', (e) => {
+                    const header = e.target.closest('.accordion-header');
+                    if (!header) return;
+
+                    const item = header.parentElement;
+                    const content = item.querySelector('.accordion-content');
+                    const icon = header.querySelector('.accordion-icon');
+                    const isOpen = content.style.maxHeight;
+
+                    // Close all other items
+                    item.parentElement.querySelectorAll('.accordion-content').forEach(c => {
+                        if (c !== content) {
+                            c.style.maxHeight = null;
+                            c.previousElementSibling.querySelector('.accordion-icon').textContent = '+';
+                        }
+                    });
+
+                    // Toggle current item
+                    if (isOpen) {
+                        content.style.maxHeight = null;
+                        icon.textContent = '+';
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        icon.textContent = '-';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
